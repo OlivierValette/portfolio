@@ -1,0 +1,52 @@
+/*
+ Theme Name:   Citrouille
+ Description:  Thème original quoiqu'expérimental d'un débutant WordPress
+ Author:       Olivier Valette
+ Author URI:   http://www.olivier-valette.com
+ Template: citrouille
+ Version:      1.0.0
+*/
+
+body {
+    color: #333;
+    font-family: "Roboto", "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+nav > ul.menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav > ul.menu > li {
+    transition: 1s;
+    text-align: center;
+    flex: 1;
+}
+
+nav > ul.menu > li:hover {
+    background-color: rgba(175, 175, 175, 0.95);
+}
+
+nav > ul.menu > li:hover a {
+    color: white;
+}
+
+nav > ul.menu a {
+    transition: 1s;
+    display: block;
+    padding: 1rem 0;
+    color: rgba(175, 175, 175, 0.95);
+    text-decoration: none;
+}
+
+ul.inline-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.inline-list li {
+    display: inline-block;
+}

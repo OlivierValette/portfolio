@@ -14,6 +14,8 @@ body {
     font-weight: 400;
 }
 
+/* main menu */
+
 nav.menu-menu-principal-container ul {
     display: flex;
     justify-content: start;
@@ -80,7 +82,6 @@ nav.menu-menu-principal-container ul li:hover ul a {
     transition: 1s;
 }
 
-
 /* footer menu */
 
 footer nav ul {
@@ -119,4 +120,28 @@ p.bottom-text {
     font-size: 0.7rem;
     text-align: start;
     padding: 10px;
+}
+
+/* single page with sidebar */
+
+.single-header h1 {
+    text-align: center;
+}
+
+.single-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.single-content {
+    width: 75%;
+}
+
+.single-content img {
+    width: 95%;
+}
+
+.widget-area {
+    width: 25%;
 }

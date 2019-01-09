@@ -28,4 +28,18 @@ register_nav_menus([
 	'menu-reseaux-sociaux' => 'Liens bas de page',
 ]);
 
+// Inserting sidebar in back-office
+if ( function_exists('register_sidebar') ) {
+	register_sidebar([
+		'name' => 'sidebar',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	]);
+}
+
+// Activating featured images (post thumbnails)
+add_theme_support('post-thumbnails');
+
 ?>

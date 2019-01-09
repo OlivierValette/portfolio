@@ -3,50 +3,124 @@
  Description:  Thème original quoiqu'expérimental d'un débutant WordPress
  Author:       Olivier Valette
  Author URI:   http://www.olivier-valette.com
- Template: citrouille
+ Template:     citrouille
  Version:      1.0.0
 */
 
 body {
-    color: #333;
+    color: #2d2d2d;
     font-family: "Roboto", "Helvetica Neue", helvetica, arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 400;
 }
 
-nav > ul.menu {
+nav.menu-menu-principal-container ul {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-content: center;
     list-style-type: none;
+    margin: 0;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-nav > ul.menu > li {
+nav.menu-menu-principal-container ul li {
     transition: 1s;
     text-align: center;
     flex: 1;
 }
 
-nav > ul.menu > li:hover {
-    background-color: rgba(175, 175, 175, 0.95);
+nav.menu-menu-principal-container ul li:hover {
+    background-color: rgba(100, 100, 100, 0.95);
 }
 
-nav > ul.menu > li:hover a {
+nav.menu-menu-principal-container ul li:hover a {
     color: white;
 }
 
-nav > ul.menu a {
+nav.menu-menu-principal-container ul a {
     transition: 1s;
     display: block;
     padding: 1rem 0;
-    color: rgba(175, 175, 175, 0.95);
+    color: rgba(100, 100, 100, 0.95);
     text-decoration: none;
 }
 
-ul.inline-list {
-    padding: 0;
+/* sub menu */
+
+nav.menu-menu-principal-container ul li ul {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+}
+
+nav.menu-menu-principal-container ul li:hover ul {
+    display: block;
+}
+
+nav.menu-menu-principal-container ul li:hover ul li {
+    background-image: linear-gradient(to right, #dddddd, #ffffff);
+    display: block;
+    min-width: 250px;
+    padding: 0 5px;
+    text-align: left;
+    transition: 1s;
+    z-index: 1;
+}
+
+nav.menu-menu-principal-container ul li:hover ul li:hover {
+    background-color: #f1f1f1;
+}
+
+nav.menu-menu-principal-container ul li:hover ul li:hover a {
+    color: black;
+}
+
+nav.menu-menu-principal-container ul li:hover ul a {
+    color: rgba(100, 100, 100, 0.95);
+    display: block;
+    padding: 1rem 0;
+    transition: 1s;
+}
+
+
+/* footer menu */
+
+footer nav ul {
+    display: flex;
+    justify-content: start;
     list-style-type: none;
 }
 
-ul.inline-list li {
-    display: inline-block;
+footer nav ul li {
+    transition: 1s;
+    text-align: center;
+    margin: 0 20px;
+    padding: 0 20px;
+}
+
+footer nav ul li:hover {
+    background-color: rgba(220, 220, 220, 0.95);
+}
+
+footer nav ul li:hover a {
+    color: black;
+}
+
+footer nav ul a {
+    transition: 1s;
+    display: block;
+    padding: 1rem 0;
+    color: rgba(100, 100, 100, 0.95);
+    text-decoration: none;
+}
+
+/* Bottom text */
+
+p.bottom-text {
+    color: gray;
+    font-size: 0.7rem;
+    text-align: start;
+    padding: 10px;
 }

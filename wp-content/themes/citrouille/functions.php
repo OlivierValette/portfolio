@@ -13,12 +13,14 @@ function insert_css()
 	wp_enqueue_script('scroll');
 }
 
+// Example of hook, adding text in wp_footer
 add_action('wp_footer', 'footer_text');
 function footer_text()
 {
-	echo "<p style='color: black'>Bienvenue sur le site citrouille</p><br>";
+	echo "<p class='bottom-text'><i>&copy; Olivier Valette</i></p>";
 }
 
+// Defining menus location
 add_theme_support('menus');
 register_nav_menus([
 	'menu-principal' => 'Navigation principale',

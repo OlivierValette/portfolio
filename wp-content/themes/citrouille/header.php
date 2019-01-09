@@ -19,6 +19,7 @@
 		?>>
 
 	<header>
+        <img src="<?= bloginfo('template_url'); ?>/images/logo.png" alt="logo">
 		<?php
 			wp_nav_menu([
 				'theme_location' => 'menu-principal',

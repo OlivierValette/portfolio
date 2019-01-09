@@ -69,10 +69,6 @@ nav.menu-menu-principal-container ul li:hover ul li {
     z-index: 1;
 }
 
-nav.menu-menu-principal-container ul li:hover ul li:hover {
-    background-color: #f1f1f1;
-}
-
 nav.menu-menu-principal-container ul li:hover ul li:hover a {
     color: black;
 }

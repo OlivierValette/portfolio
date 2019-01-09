@@ -124,8 +124,21 @@ p.bottom-text {
 
 /* single page with sidebar */
 
-.single-header h1 {
+.single-header {
+    align-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    min-height: 200px;
     text-align: center;
+}
+
+.single-header p {
+    margin: 0;
+    padding: 5px;
 }
 
 .single-main {
@@ -135,7 +148,7 @@ p.bottom-text {
 }
 
 .single-content {
-    width: 75%;
+    width: 70%;
 }
 
 .single-content img {

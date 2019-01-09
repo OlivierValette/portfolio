@@ -3,27 +3,27 @@
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	    
-        <header class="single-header">
-            <h1 style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
+        <header class="single-header"
+                style="background-image: url('<?= bloginfo('template_url'); ?>/images/realisation2.jpg')">
+            <h1 >
                 <?php _e('Réalisation : ', 'citrouille'); ?>
                 <?php the_title(); ?>
             </h1>
             <p>Ajouté le <?php the_time('l d F Y'); ?></p>
             <p>
-                <p><?php _e('Catégories :', 'citrouille'); ?>
+                <?php _e('Catégories :', 'citrouille'); ?>
                 <?php $categories = get_the_category(); ?>
                 <?php foreach ($categories as $category) : ?>
-                    &nbsp;<i><?= $category->name; ?></i>
+                    &nbsp;<a href="<?= get_category_link( $category->term_id ); ?>"><?= $category->name; ?></a>
                 <?php endforeach; ?>
             </p>
-            <?php the_category(); ?>
         </header>
     
         <main class="single-main">
             
             <div class="single-content">
-                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="image à la une">
                 <?php the_content(); ?>
+                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="image à la une">
             </div>
 
             <aside class="widget-area">

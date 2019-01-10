@@ -26,7 +26,7 @@
                 <img src="<?php the_post_thumbnail_url('large'); ?>" alt="image à la une">
             </div>
 
-            <aside class="widget-area">
+            <aside class="single-widget-area">
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'sidebar' ) ) : ?>
                 <?php endif; ?>
             </aside>

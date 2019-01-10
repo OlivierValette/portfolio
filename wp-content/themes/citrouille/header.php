@@ -19,7 +19,11 @@
 		?>>
 
 	<header>
-        <img src="<?= bloginfo('template_url'); ?>/images/logo.png" alt="logo">
+        <!-- company bar -->
+        <div class="header-company-bar">
+            <img src="<?= bloginfo('template_url'); ?>/images/logo.png" alt="logo">
+        </div>
+        <!-- main menu -->
 		<?php
 			wp_nav_menu([
 				'theme_location' => 'menu-principal',

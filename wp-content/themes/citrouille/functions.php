@@ -5,6 +5,8 @@ function insert_css()
 {
 	// adding theme global css
     wp_enqueue_style( 'style', get_stylesheet_uri() );
+    // adding fonts
+	wp_register_script('font1', 'https://fonts.googleapis.com/css?family=Thasadith');
     // adding jQuery
 	wp_register_script('jquery2','https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js');
 	wp_enqueue_script('jquery2');

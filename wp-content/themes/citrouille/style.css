@@ -9,9 +9,15 @@
 
 body {
     color: #2d2d2d;
-    font-family: "Roboto", "Helvetica Neue", helvetica, arial, sans-serif;
+    font-family: "Thasadith", "Roboto", "Helvetica Neue", sans-serif;
     font-size: 1.15rem;
     font-weight: 400;
+}
+
+/* header company bar */
+
+.header-company-bar {
+    background-color: rgba(100, 100, 100, 0.95);
 }
 
 /* main menu */
@@ -155,6 +161,84 @@ p.bottom-text {
     width: 95%;
 }
 
-.widget-area {
+.single-widget-area {
+    width: 25%;
+}
+
+/* home with sidebar */
+
+.home-header {
+    align-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    min-height: 200px;
+    text-align: center;
+}
+
+.home-header p {
+    margin: 0;
+    padding: 5px;
+}
+
+.home-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.home-content img {
+    width: 95%;
+}
+
+.content-title {
+    width: 100%;
+}
+
+.content-thumbnail {
+     width: 50%;
+}
+
+.content-thumbnail img {
+    padding: 2px;
+    width: 85%;
+}
+
+.content-text {
+    font-size: smaller;
+    width: 50%;
+}
+
+.home-widget-area {
+    width: 25%;
+}
+
+
+/* front-page with sidebar */
+
+.front-page-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.front-page-content {
+    padding: 0 15px;
+    width: 70%;
+}
+
+.front-page-widget-area {
     width: 25%;
 }

@@ -14,7 +14,10 @@
                 <?php _e('Catégories :', 'citrouille'); ?>
                 <?php $categories = get_the_category(); ?>
                 <?php foreach ($categories as $category) : ?>
-                    &nbsp;<a href="<?= get_category_link( $category->term_id ); ?>"><?= $category->name; ?></a>
+                    &nbsp;
+                    <a class="button" href="<?= get_category_link( $category->term_id ); ?>">
+                        <?= $category->name; ?>
+                    </a>
                 <?php endforeach; ?>
             </p>
         </header>
@@ -44,4 +47,4 @@
 
 <?php endif;?>
 
-<?php get_footer(); ?>
+<?php get_footer();

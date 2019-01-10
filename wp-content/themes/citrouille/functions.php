@@ -5,11 +5,15 @@ function insert_css()
 {
 	// adding theme global css
     wp_enqueue_style( 'style', get_stylesheet_uri() );
+    
     // adding fonts
-	wp_register_script('font1', 'https://fonts.googleapis.com/css?family=Thasadith');
-    // adding jQuery
+	wp_register_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather', false);
+	wp_enqueue_style('custom-google-fonts');
+ 
+	// adding jQuery
 	wp_register_script('jquery2','https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js');
 	wp_enqueue_script('jquery2');
+	
 	// adding other libraries
 	wp_register_script('scroll','https://unpkg.com/scrollreveal/dist/scrollreveal.min.js');
 	wp_enqueue_script('scroll');
@@ -43,5 +47,3 @@ if ( function_exists('register_sidebar') ) {
 
 // Activating featured images (post thumbnails)
 add_theme_support('post-thumbnails');
-
-?>

@@ -7,11 +7,35 @@
  Version:      1.0.0
 */
 
-body {
+/* typo */
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
     color: #2d2d2d;
-    font-family: "Thasadith", "Roboto", "Helvetica Neue", sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 1.15rem;
     font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+}
+
+
+
+pre {
+    font-family: Courier, monospace;
+    font-size: 1rem;
+}
+
+code {
+    font-family: Consolas, monospace;
+    font-size: 1rem;
 }
 
 /* header company bar */
@@ -189,43 +213,63 @@ p.bottom-text {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .home-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
     width: 70%;
 }
-
-.home-content img {
-    width: 95%;
-}
-
-.content-title {
-    width: 100%;
-}
-
-.content-thumbnail {
-     width: 50%;
-}
-
-.content-thumbnail img {
-    padding: 2px;
-    width: 85%;
-}
-
-.content-text {
-    font-size: smaller;
-    width: 50%;
-}
-
 .home-widget-area {
     width: 25%;
 }
 
+.home-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+.home-link img {
+    width: 95%;
+}
+
+.home-link .content-title {
+    background-color: rgba(100, 100, 100, 0.5);
+    width: 100%;
+}
+.home-link .content-thumbnail {
+
+     width: 50%;
+}
+.home-link .content-text {
+    font-size: smaller;
+    width: 50%;
+}
+
+.home-link .content-thumbnail img {
+    padding: 2px;
+    width: 85%;
+}
+
 
 /* front-page with sidebar */
+
+.front-page-header {
+    align-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    min-height: 200px;
+    text-align: center;
+}
+
+.front-page-header p {
+    margin: 0;
+    padding: 5px;
+}
 
 .front-page-main {
     display: flex;
@@ -241,4 +285,68 @@ p.bottom-text {
 
 .front-page-widget-area {
     width: 25%;
+}
+
+/* button and sidebar */
+
+aside h4, ul {
+    margin: 5px 0;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+.button,
+aside a {
+    background: rgba(100, 100, 100, 0.95);
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    margin: 1px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+aside a:hover,
+.button:hover,
+aside a:focus,
+.button:focus,
+aside a:active,
+.button:active {
+    background: rgba(100, 100, 100, 0.65);
+    color: #fff;
+}
+
+/* search form */
+
+.searchform input
+{
+    border-radius: 3px;
+    border-style: groove;
+    padding: 5px;
+}
+
+.screen-reader-text {
+    color: #fff;
+}
+
+#searchsubmit
+{
+    background: rgba(100, 100, 100, 0.65);
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    margin: 1px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#searchsubmit:hover,
+#searchsubmit:focus,
+#searchsubmit:active {
+    background: rgba(100, 100, 100, 0.95);
+    color: #fff;
 }

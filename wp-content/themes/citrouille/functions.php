@@ -47,3 +47,81 @@ if ( function_exists('register_sidebar') ) {
 
 // Activating featured images (post thumbnails)
 add_theme_support('post-thumbnails');
+
+// Creating custom post-types for specific needs
+function create_post_type() {
+	register_post_type('clients',
+		[
+			'label'                 => __('Clients'),
+			'singular_label'        => __('Client'),
+			'add_new_item'          => __('Ajouter un client'),
+			'edit_item'             => __('Modifier un client'),
+			'new_item'              => __('Nouveau client'),
+			'view_item'             => __('Voir le client'),
+			'search_items'          => __('Rechercher un client'),
+			'not_found'             => __('Aucun client trouvé'),
+			'not_found_in_trash'    => __('Aucun client trouvé'),
+			'public'                => true,
+			'show_ui'               => true,
+			'capability_type'       => 'post',
+			'has_archive'           => true,
+			'hierarchical'          => true,
+			'menu_icon'             => 'dashicons-groups',
+			'taxonomies'            => array('types'),
+			'supports'              => array('title', 'editor', 'thumbnail'),
+			'rewrite'               => array('slug' => 'client', 'with_front' => true),
+		]
+	);
+	register_post_type('realisations',
+		[
+			'label'                 => __('Réalisations'),
+			'singular_label'        => __('Réalisation'),
+			'add_new_item'          => __('Ajouter une réalisation'),
+			'edit_item'             => __('Modifier une réalisation'),
+			'new_item'              => __('Nouvelle réalisation'),
+			'view_item'             => __('Voir la réalisation'),
+			'search_items'          => __('Rechercher une réalisation'),
+			'not_found'             => __('Aucune réalisation trouvée'),
+			'not_found_in_trash'    => __('Aucune réalisation trouvée'),
+			'public'                => true,
+			'show_ui'               => true,
+			'capability_type'       => 'post',
+			'has_archive'           => true,
+			'hierarchical'          => true,
+			'menu_icon'             => 'dashicons-images-alt',
+			'taxonomies'            => array('types'),
+			'supports'              => array('title', 'editor', 'thumbnail'),
+			'rewrite'               => array('slug' => 'realisation', 'with_front' => true),
+		]
+	);
+}
+add_action( 'init', 'create_post_type' );
+
+// Adding associated taxonomies
+function citrouille_taxonomy() {
+	register_taxonomy(
+		'nature',
+		'clients',
+		[
+			'label' => 'Nature',
+			'query_var' => true,
+			'rewrite' => [
+				'slug' => 'nature',
+				'with_front' => true,
+			]
+		]
+	);
+	register_taxonomy(
+		'genre',
+		'realisations',
+		[
+			'label' => 'Genre',
+			'query_var' => true,
+			'rewrite' => [
+				'slug' => 'genre',
+				'with_front' => true,
+				]
+		]
+	);
+}
+add_action( 'init', 'citrouille_taxonomy');

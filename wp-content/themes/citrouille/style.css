@@ -44,6 +44,17 @@ code {
     background-color: rgba(100, 100, 100, 0.95);
 }
 
+.header-company-bar > img {
+    animation: bandf 50s infinite;
+    transition: padding-left 1s ease-in-out;
+}
+
+@keyframes bandf {
+    0%   {padding-left: 0;}
+    50%  {padding-left: calc( 100% - 32px );}
+    100% {padding-left: 0;}
+}
+
 /* main menu */
 
 nav.menu-menu-principal-container ul {
@@ -295,11 +306,12 @@ aside h4, ul {
 
 aside ul {
     list-style-type: none;
+    padding-inline-start: 2px;
 }
 
 .button,
 aside a {
-    background: rgba(100, 100, 100, 0.95);
+    background: rgba(100, 100, 100, 0.65);
     border: 0;
     border-radius: 3px;
     color: #fff;
@@ -315,21 +327,20 @@ aside a:focus,
 .button:focus,
 aside a:active,
 .button:active {
-    background: rgba(100, 100, 100, 0.65);
+    background: rgba(100, 100, 100, 0.95);
     color: #fff;
 }
 
 .button.tech {
     font-size: smaller;
-    background: rgba(100, 0, 0, 0.95);
+    background: rgba(150, 0, 0, 0.75);
     color: #fff;
 }
-
 
 .button.tech:hover,
 .button.tech:focus,
 .button.tech:active {
-    background: rgba(100, 0, 0, 0.65);
+    background: rgba(150, 0, 0, 0.95);
     color: #fff;
 }
 

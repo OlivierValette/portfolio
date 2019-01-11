@@ -17,6 +17,14 @@ $pagefeaturedimage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
 	<?php while (have_posts()) : the_post();
     
         the_content();
+		
+		// child pages list :
+        $children = wp_list_pages([
+            'title_li' => '<h4>' . __('Voir aussi :') . '</h4>',
+            'child_of' => $post->ID,
+        ]);
+        if ( $children ) : echo $children;
+        endif;
 
         // If comments are open or we have at least one comment, load up the comment template.
         if ( comments_open() || get_comments_number() ) :

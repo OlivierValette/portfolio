@@ -298,6 +298,18 @@ p.bottom-text {
     width: 25%;
 }
 
+/* sub page menu */
+
+li.pagenav {
+    list-style-type: none;
+    margin: 0;
+    padding:  8px 0;
+}
+
+li.pagenav h4 {
+    margin-bottom: 0;
+}
+
 /* button and sidebar */
 
 aside h4, ul {

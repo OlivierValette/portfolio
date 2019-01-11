@@ -19,6 +19,14 @@ $pagefeaturedimage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
 		<div class="front-page-content">
             <?php while (have_posts()) : the_post(); ?>
                 <?php the_content(); ?>
+                <?php // child pages list :
+                    $children = wp_list_pages([
+                        'title_li' => '<h4>' . __('Voir aussi :') . '</h4>',
+                        'child_of' => $post->ID,
+                    ]);
+                    if ( $children ) : echo $children;
+                    endif;
+                ?>
             <?php endwhile;?>
         </div>
         

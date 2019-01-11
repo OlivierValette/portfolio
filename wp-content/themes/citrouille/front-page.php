@@ -19,6 +19,12 @@ $pagefeaturedimage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
 		<div class="front-page-content">
             <?php while (have_posts()) : the_post(); ?>
                 <?php the_content(); ?>
+                <?php // custom field
+                    if (get_field('texte')) : ?>
+                    <div style="background-color: #9adffd">
+                        <?php the_field('texte') ?>
+                    </div>
+	            <?php endif; ?>
                 <?php
                     // child pages content
                     $post = get_the_ID();

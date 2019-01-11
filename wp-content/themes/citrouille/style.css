@@ -358,15 +358,14 @@ aside a:active,
 
 /* search form */
 
-.searchform input
-{
+.searchform input[type="text"] {
     border-radius: 3px;
     border-style: groove;
-    padding: 5px;
+    margin-left: -105.33px;
 }
 
 .screen-reader-text {
-    color: #fff;
+    visibility: hidden;
 }
 
 #searchsubmit

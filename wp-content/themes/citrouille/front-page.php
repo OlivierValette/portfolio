@@ -19,14 +19,33 @@ $pagefeaturedimage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
 		<div class="front-page-content">
             <?php while (have_posts()) : the_post(); ?>
                 <?php the_content(); ?>
-                <?php // child pages list :
-                    $children = wp_list_pages([
-                        'title_li' => '<h4>' . __('Voir aussi :') . '</h4>',
-                        'child_of' => $post->ID,
-                    ]);
-                    if ( $children ) : echo $children;
-                    endif;
-                ?>
+                <?php
+                    // child pages content
+                    $post = get_the_ID();
+                    $args = [
+                        'post_type' => 'page',
+                        'post_parent' => $post,
+                        'orderby' => 'rand',
+                    ];
+                    $the_query = new WP_Query($args); ?>
+                    <h4>Voir aussi...</h4>
+                    <div class="pagecards">
+                        <?php if ( $the_query->have_posts() ) :
+                        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <div class="pagecard-thumbnail">
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </a>
+                                <div class="pagecard-details">
+                                    <h4><?php the_title() ?></h4>
+                                    <?php the_excerpt(); ?>
+                                    <ul class="pagecard-buttons">
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+	            <?php endif; ?>
             <?php endwhile;?>
         </div>
         

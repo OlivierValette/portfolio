@@ -50,77 +50,58 @@ add_theme_support('post-thumbnails');
 
 // Creating custom post-types for specific needs
 function create_post_type() {
-	register_post_type('clients',
+	register_post_type('project',
 		[
-			'label'                 => __('Clients'),
-			'singular_label'        => __('Client'),
-			'add_new_item'          => __('Ajouter un client'),
-			'edit_item'             => __('Modifier un client'),
-			'new_item'              => __('Nouveau client'),
-			'view_item'             => __('Voir le client'),
-			'search_items'          => __('Rechercher un client'),
-			'not_found'             => __('Aucun client trouvé'),
-			'not_found_in_trash'    => __('Aucun client trouvé'),
-			'public'                => true,
-			'show_ui'               => true,
-			'capability_type'       => 'post',
-			'has_archive'           => true,
-			'hierarchical'          => true,
-			'menu_icon'             => 'dashicons-groups',
-			'taxonomies'            => array('types'),
-			'supports'              => array('title', 'editor', 'thumbnail'),
-			'rewrite'               => array('slug' => 'client', 'with_front' => true),
-		]
-	);
-	register_post_type('realisations',
-		[
-			'label'                 => __('Réalisations'),
-			'singular_label'        => __('Réalisation'),
-			'add_new_item'          => __('Ajouter une réalisation'),
-			'edit_item'             => __('Modifier une réalisation'),
-			'new_item'              => __('Nouvelle réalisation'),
-			'view_item'             => __('Voir la réalisation'),
-			'search_items'          => __('Rechercher une réalisation'),
-			'not_found'             => __('Aucune réalisation trouvée'),
-			'not_found_in_trash'    => __('Aucune réalisation trouvée'),
+			'label'                 => __('Projets'),
+			'singular_label'        => __('Projet'),
+			'add_new_item'          => __('Ajouter un projet'),
+			'edit_item'             => __('Modifier un projet'),
+			'new_item'              => __('Nouveau projet'),
+			'view_item'             => __('Voir le projet'),
+			'search_items'          => __('Rechercher un projet'),
+			'not_found'             => __('Aucun projet trouvé'),
+			'not_found_in_trash'    => __('Aucun projet trouvé'),
 			'public'                => true,
 			'show_ui'               => true,
 			'capability_type'       => 'post',
 			'has_archive'           => true,
 			'hierarchical'          => true,
 			'menu_icon'             => 'dashicons-images-alt',
-			'taxonomies'            => array('types'),
+			'taxonomies'            => array('project_type'),
 			'supports'              => array('title', 'editor', 'thumbnail'),
-			'rewrite'               => array('slug' => 'realisation', 'with_front' => true),
+			'rewrite'               => array('slug' => 'project', 'with_front' => true),
 		]
 	);
 }
 add_action( 'init', 'create_post_type' );
 
 // Adding associated taxonomies
+// with property 'hierarchical' set to true for category otherwise label
 function citrouille_taxonomy() {
 	register_taxonomy(
-		'nature',
-		'clients',
+		'project_type',
+		'project',
 		[
-			'label' => 'Nature',
+			'label' => 'Type',
 			'query_var' => true,
 			'rewrite' => [
-				'slug' => 'nature',
+				'slug' => 'project_type',
 				'with_front' => true,
-			]
+				],
+			'hierarchical' => true,
 		]
 	);
 	register_taxonomy(
-		'genre',
-		'realisations',
+		'project_tech',
+		'project',
 		[
-			'label' => 'Genre',
+			'label' => 'Techno',
 			'query_var' => true,
 			'rewrite' => [
-				'slug' => 'genre',
+				'slug' => 'project_tech',
 				'with_front' => true,
-				]
+			],
+			'hierarchical' => false,
 		]
 	);
 }

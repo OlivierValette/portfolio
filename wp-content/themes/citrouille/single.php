@@ -27,6 +27,16 @@
             <div class="single-content">
                 <?php the_content(); ?>
                 <img src="<?php the_post_thumbnail_url('large'); ?>" alt="image à la une">
+                <p>
+		            <?php _e('Etiquettes :', 'citrouille'); ?>
+		            <?php $tags = get_the_tags(); ?>
+		            <?php foreach ($tags as $tag) : ?>
+                        &nbsp;
+                        <a class="button" href="<?= get_category_link( $tag->term_id ); ?>">
+				            <?= $tag->name; ?>
+                        </a>
+		            <?php endforeach; ?>
+                </p>
             </div>
 
             <aside class="single-widget-area">

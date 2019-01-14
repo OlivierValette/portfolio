@@ -200,6 +200,20 @@ p.bottom-text {
     width: 25%;
 }
 
+/* 404 page */
+
+.fourOfour-header {
+    align-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    min-height: 300px;
+    text-align: center;
+}
+
 /* home with sidebar */
 
 .home-header {

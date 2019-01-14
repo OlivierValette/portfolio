@@ -41,7 +41,7 @@ code {
 /* header company bar */
 
 .header-company-bar {
-    background-color: rgba(100, 100, 100, 0.95);
+    background-color: rgba(33, 75, 100, 0.95);
 }
 
 .header-company-bar > img {
@@ -75,7 +75,7 @@ nav.menu-menu-principal-container ul li {
 }
 
 nav.menu-menu-principal-container ul li:hover {
-    background-color: rgba(100, 100, 100, 0.95);
+    background-color: rgba(33, 75, 100, 0.95);
 }
 
 nav.menu-menu-principal-container ul li:hover a {
@@ -86,7 +86,7 @@ nav.menu-menu-principal-container ul a {
     transition: 1s;
     display: block;
     padding: 1rem 0;
-    color: rgba(100, 100, 100, 0.95);
+    color: rgba(33, 75, 100, 0.95);
     text-decoration: none;
 }
 
@@ -103,9 +103,9 @@ nav.menu-menu-principal-container ul li:hover ul {
 }
 
 nav.menu-menu-principal-container ul li:hover ul li {
-    background-image: linear-gradient(to right, #dddddd, #ffffff);
+    background-image: linear-gradient(to right, rgba(33, 75, 100, 0.75), rgba(33, 75, 100, 0.15));
     display: block;
-    min-width: 250px;
+    min-width: 350px;
     padding: 0 5px;
     text-align: left;
     transition: 1s;
@@ -113,11 +113,11 @@ nav.menu-menu-principal-container ul li:hover ul li {
 }
 
 nav.menu-menu-principal-container ul li:hover ul li:hover a {
-    color: black;
+    color: white;
 }
 
 nav.menu-menu-principal-container ul li:hover ul a {
-    color: rgba(100, 100, 100, 0.95);
+    color: white;
     display: block;
     padding: 1rem 0;
     transition: 1s;
@@ -139,7 +139,7 @@ footer nav ul li {
 }
 
 footer nav ul li:hover {
-    background-color: rgba(220, 220, 220, 0.95);
+    background-color: rgba(33, 75, 100, 0.95);
 }
 
 footer nav ul li:hover a {
@@ -150,7 +150,7 @@ footer nav ul a {
     transition: 1s;
     display: block;
     padding: 1rem 0;
-    color: rgba(100, 100, 100, 0.95);
+    color: rgba(33, 75, 100, 0.95);
     text-decoration: none;
 }
 
@@ -323,7 +323,7 @@ p.bottom-text {
 }
 
 .front-page-texte {
-    background-color: rgba(64, 197, 255, 0.33);
+    background-color: rgba(33, 75, 100, 0.3);
     padding: 3px 8px;
 }
 

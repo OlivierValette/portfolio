@@ -84,7 +84,7 @@ add_action( 'init', 'create_post_type' );
 
 // Adding associated taxonomies
 // with property 'hierarchical' set to true for category otherwise label
-function citrouille_taxonomy() {
+function project_taxonomy() {
 	register_taxonomy(
 		'project_type',
 		'project',
@@ -112,4 +112,4 @@ function citrouille_taxonomy() {
 		]
 	);
 }
-add_action( 'init', 'citrouille_taxonomy');
+add_action( 'init', 'project_taxonomy');

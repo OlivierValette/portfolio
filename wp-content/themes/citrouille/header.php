@@ -13,10 +13,8 @@
 	
 </head>
 
-<body <?php
-			//body_class() generate a context dependant class attribute
-			body_class();
-		?>>
+<body <?php //body_class() generate a context dependant class attribute
+			body_class();?> >
 
 	<header>
         <!-- company bar -->

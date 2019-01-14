@@ -277,7 +277,7 @@ p.bottom-text {
 }
 
 
-/* front-page with sidebar */
+/* front-page with custom text field */
 
 .front-page-header {
     align-content: flex-end;
@@ -287,8 +287,14 @@ p.bottom-text {
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 25px;
-    min-height: 200px;
+    padding-bottom: 100px;
+    min-height: 300px;
     text-align: center;
+
+}
+.front-page-header h1 {
+    background: rgba(255, 255, 255, 0.75);
+    color: black;
 }
 
 .front-page-header p {
@@ -304,12 +310,38 @@ p.bottom-text {
 }
 
 .front-page-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0 15px;
     width: 70%;
 }
 
-.front-page-widget-area {
+.front-page-aside-area {
     width: 25%;
+}
+
+.front-page-texte {
+    background-color: rgba(64, 197, 255, 0.33);
+    padding: 3px 8px;
+}
+
+.front-page-avatar {
+    width: 33%;
+}
+
+.front-page-avatar .list-group-item {
+    text-decoration: none;
+}
+
+.front-page-avatar img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.front-page-post {
+    width: 66%;
 }
 
 /* sub page menu */

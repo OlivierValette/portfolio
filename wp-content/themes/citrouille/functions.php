@@ -1,5 +1,9 @@
 <?php
 
+// define directory path and uri in constants
+define('THEME_DIR_PATH', get_template_directory());
+define('THEME_DIR_URI', get_template_directory_uri());
+
 add_action( 'wp_enqueue_scripts', 'insert_css' );
 function insert_css()
 {
@@ -17,6 +21,9 @@ function insert_css()
 	// adding other libraries
 	wp_register_script('scroll','https://unpkg.com/scrollreveal/dist/scrollreveal.min.js');
 	wp_enqueue_script('scroll');
+	
+	// adding Font Awesome css
+	wp_enqueue_style( 'font-awesome', THEME_DIR_URI . '/includes/css/font-awesome.min.css', false, '4.1.0' );
 }
 
 // Example of hook, adding text in wp_footer

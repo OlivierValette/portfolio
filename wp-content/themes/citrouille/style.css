@@ -382,7 +382,11 @@ aside a:active,
     visibility: hidden;
 }
 
-#searchsubmit
+.searchfield {
+    border-radius: 3px;
+    border-style: groove;
+}
+.searchsubmit
 {
     background: rgba(100, 100, 100, 0.65);
     border: 0;
@@ -394,11 +398,55 @@ aside a:active,
     text-decoration: none;
 }
 
-#searchsubmit:hover,
-#searchsubmit:focus,
-#searchsubmit:active {
+.searchsubmit:hover,
+.searchsubmit:focus,
+.searchsubmit:active {
     background: rgba(100, 100, 100, 0.95);
     color: #fff;
+}
+
+/* search page card */
+
+.searchpagecards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.searchpagecard-thumbnail {
+    background-color: #adacb1;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 100%;
+}
+
+.searchpagecard-thumbnail img {
+    height: 100px;
+    width: 100%;
+}
+
+.searchpagecard-thumbnail .searchpagecard-details {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.searchpagecard-thumbnail .searchpagecard-details h4 {
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+.searchpagecard-thumbnail .searchpagecard-details p {
+    font-size: 0.65em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
 }
 
 /* page card */

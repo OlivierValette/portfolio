@@ -26,8 +26,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-
-
 pre {
     font-family: Courier, monospace;
     font-size: 1rem;
@@ -163,43 +161,6 @@ p.bottom-text {
     padding: 10px;
 }
 
-/* single page with sidebar */
-
-.single-header {
-    align-content: flex-end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 25px;
-    min-height: 200px;
-    text-align: center;
-}
-
-.single-header p {
-    margin: 0;
-    padding: 5px;
-}
-
-.single-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.single-content {
-    width: 70%;
-}
-
-.single-content img {
-    width: 95%;
-}
-
-.single-widget-area {
-    width: 25%;
-}
-
 /* 404 page */
 
 .fourOfour-header {
@@ -214,9 +175,11 @@ p.bottom-text {
     text-align: center;
 }
 
-/* home with sidebar */
+/* Page header */
 
-.home-header {
+.front-page-header,
+.home-header,
+.single-header {
     align-content: flex-end;
     background-repeat: no-repeat;
     background-size: cover;
@@ -224,14 +187,26 @@ p.bottom-text {
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 25px;
-    min-height: 200px;
+    padding-bottom: 100px;
+    min-height: 300px;
     text-align: center;
+
+}
+.front-page-header h1,
+.home-header h1,
+.single-header h1 {
+    background: rgba(255, 255, 255, 0.75);
+    color: black;
 }
 
-.home-header p {
+.front-page-header p,
+.home-header p,
+.single-header p {
     margin: 0;
     padding: 5px;
 }
+
+/* Home page */
 
 .home-main {
     display: flex;
@@ -259,7 +234,9 @@ p.bottom-text {
 }
 
 .home-link .content-title {
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(33, 75, 100, 0.95);
+    color: white;
+    padding: 5px;
     width: 100%;
 }
 .home-link .content-thumbnail {
@@ -278,29 +255,6 @@ p.bottom-text {
 
 
 /* front-page with custom text field */
-
-.front-page-header {
-    align-content: flex-end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 25px;
-    padding-bottom: 100px;
-    min-height: 300px;
-    text-align: center;
-
-}
-.front-page-header h1 {
-    background: rgba(255, 255, 255, 0.75);
-    color: black;
-}
-
-.front-page-header p {
-    margin: 0;
-    padding: 5px;
-}
 
 .front-page-main {
     display: flex;
@@ -332,6 +286,7 @@ p.bottom-text {
 }
 
 .front-page-avatar .list-group-item {
+    color: #5C5C5C;
     text-decoration: none;
 }
 
@@ -479,6 +434,29 @@ aside a:active,
     font-size: 0.65em;
     margin-top: 0.3em;
     margin-bottom: 0.3em;
+}
+
+/* single page with sidebar */
+
+.single-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.single-content {
+    padding: 20px;
+    width: 50%;
+}
+
+.single-aside {
+    padding: 10px;
+    width: 45%;
+}
+
+.single-aside img {
+    margin: 35px 5px;
+    width: 95%;
 }
 
 /* page card */

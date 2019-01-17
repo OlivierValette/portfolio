@@ -12,48 +12,60 @@
             <p>Ajouté le <?php the_time('l d F Y'); ?></p>
             <p>
                 <?php _e('Catégories :', 'citrouille'); ?>
-                <?php $categories = get_the_category(); ?>
-                <?php foreach ($categories as $category) : ?>
-                    &nbsp;
-                    <a class="button" href="<?= get_category_link( $category->term_id ); ?>">
-                        <?= $category->name; ?>
+                <?php // project categories (project_type) ?>
+                <?php $project_taxo= get_the_terms( $post->ID, 'project_type'); ?>
+		        <?php foreach ($project_taxo as $project_type) : ?>
+                    &nbsp;<a class="button" href="<?= site_url().'/project_type/'.$project_type->slug; ?>">
+				        <?= $project_type->name; ?>
                     </a>
-                <?php endforeach; ?>
+		        <?php endforeach; ?>
             </p>
         </header>
     
         <main class="single-main">
             
             <div class="single-content">
+	
+                <div class="list-group">
+                    <h3><?php the_field('project-name'); ?>
+                        <?php if (get_field('project-url')) : ?>
+                            <a class="" target="_blank" href="<?php the_field('project-url'); ?>">
+                                <i class="fa fa-eye fa-2x fa-fw"></i>
+                            </a>
+                        <?php endif; ?>
+                    </h3>
+                    <?php if (get_field('project-desc')) : ?>
+                        <p><strong><?php the_field('project-desc'); ?></strong></p>
+                    <?php endif; ?>
+                </div>
+                
                 <?php the_content(); ?>
+                
+            </div>
+    
+            <aside class="single-aside">
+                
                 <img src="<?php the_post_thumbnail_url('large'); ?>" alt="image à la une">
+                
+	            <?php // project tags (project_tech) ?>
+	            <?php $project_taxo= get_the_terms( $post->ID, 'project_tech'); ?>
                 <p>
-		            <?php _e('Etiquettes :', 'citrouille'); ?>
-		            <?php $tags = get_the_tags(); ?>
-		            <?php foreach ($tags as $tag) : ?>
-                        &nbsp;
-                        <a class="button" href="<?= get_category_link( $tag->term_id ); ?>">
-				            <?= $tag->name; ?>
+		            <?php foreach ($project_taxo as $project_type) : ?>
+                        &nbsp;<a class="tech button" href="<?= site_url().'/project_tech/'.$project_type->slug; ?>">
+				            <?= '#'.$project_type->name; ?>
                         </a>
 		            <?php endforeach; ?>
                 </p>
-            </div>
-
-            <aside class="single-widget-area">
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'sidebar' ) ) : ?>
-                <?php endif; ?>
+                
             </aside>
-            
+
         </main>
     
     
         <footer class="single-footer">
-            <h2>Commentaires</h2>
-            <?php comments_template(); ?>
         </footer>
 	
 	<?php endwhile;?>
-
 
 <?php endif;?>
 

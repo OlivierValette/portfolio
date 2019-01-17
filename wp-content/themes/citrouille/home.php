@@ -41,8 +41,7 @@ $pagefeaturedimage = wp_get_attachment_image_src(get_post_thumbnail_id(get_optio
         </div>
         
         <aside class="home-widget-area">
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'sidebar' ) ) : ?>
-            <?php endif; ?>
+
         </aside>
 		
     </main>
